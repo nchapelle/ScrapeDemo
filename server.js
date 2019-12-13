@@ -11,6 +11,8 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
+mongoose.Promise = Promise;
+
 var PORT = process.env.PORT || 3000;
 
 // Initialize Express
@@ -28,8 +30,18 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scraperDemo";
+mongoose.Promise = Promise;
 
 mongoose.connect(MONGODB_URI);
+
+var dbc = mongoose.connection;
+dbc.on("error", function(error) {
+  console.log("Mongoose Error:", error);
+});
+//if logged correctly tell user connnection sucessful
+dbc.once(open, function() {
+  console.log("Mongoose connection successful.");
+});
 // Routes
 
 // A GET route for scraping the echoJS website
