@@ -39,7 +39,7 @@ dbc.on("error", function(error) {
   console.log("Mongoose Error:", error);
 });
 //if logged correctly tell user connnection sucessful
-dbc.once(open, function() {
+dbc.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 // Routes
