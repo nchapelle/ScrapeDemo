@@ -1,0 +1,39 @@
+body { background-color: lightgrey }
+#wrapper {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  background-color: lightgrey;
+}
+#articles {
+  display: inline-block;
+  overflow: auto;
+  width: 60%;
+  height: 700px;
+  background: lightgrey;
+}
+#notes {
+  float: right;
+  width: 30%;
+  background: lightgrey;
+}
+textarea, input {
+  display: block;
+  width: 100%;
+  background-color:lightgrey;
+}
+input {
+  height: 36px;
+  font-size: 24px;
+}
+textarea {
+  height: 200px;
+  font-size: 18px;
+}
+.card-img-top {
+-ms-flex-negative: 0;
+flex-shrink: 0;
+width: 100%;
+height: 250px;
+}
