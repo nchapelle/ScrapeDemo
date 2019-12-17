@@ -34,8 +34,8 @@ dbc.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-require("./routes/html-routes")(app);
-require("./routes/api-routes")(app);
+require("./routes/html-Routes")(app);
+require("./routes/api-Routes")(app);
 
 // Handlebars Setup
 var exphbs = require("express-handlebars");
