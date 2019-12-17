@@ -3,43 +3,37 @@
   <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
-    <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/index.css">
   </head>
   <body>
     <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>I can do this.</i></h2>
+      <div class="row"> 
+        <div class="card col" style="width: 18rem;">
+          <img src="https://logo.clearbit.com/philadelphiaeagles.com" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Eagles News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia Eagles</p>
+            <a href="/scrape/eagles" class="btn btn-success">NFL News</a>
+          </div>
+        </div>
+        <div class="card col" style="width: 18rem;">
+          <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/phi.gif" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">76ers News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia 76ers. In Progress.</p>
+            <a href="/scrape/sixers" class="btn btn-primary">NBA News</a>
+          </div>
+        </div>
+        <div class="card col" style="width: 18rem;">
+          <img src="https://www-league.nhlstatic.com/nhl.com/builds/site-core/80ac5d837e089a5cc32a2b504958401841debdf9_1575321178/images/logos/team/current/team-4-light.svg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Flyers News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia Flyers. In Progress.</p>
+            <a href="/scrape/flyers" class="btn btn-dark">NHL News</a>
+          </div>
+        </div>
+      </div>
       <div id="articles"></div>
       <div id="notes"></div>
     </div>
