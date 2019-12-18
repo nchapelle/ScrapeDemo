@@ -9,7 +9,6 @@ body { background-color: lightgrey }
 #articles {
   display: inline-block;
   overflow: auto;
-  width: 60%;
   height: 700px;
   background: lightgrey;
 }
