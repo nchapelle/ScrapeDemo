@@ -3,15 +3,13 @@
 // It works on the client and on the server
 var axios = require("axios");
 var cheerio = require("cheerio");
-var express = require("express");
-
 
 // Require all models
 var db = require("../models");
 
 module.exports = function(app) {
   // A GET route for scraping the echoJS website
-  app.get("/scrape/eagles", function(req, res) {
+  app.get("/api/scrape/eagles", function(req, res) {
     // First, we grab the body of the html with axios
     axios
       .get("http://www.nfl.com/teams/philadelphiaeagles/profile?team=PHI")
@@ -51,9 +49,8 @@ module.exports = function(app) {
       });
   });
 
-  //this is returning empty divs
 
-  app.get("/scrape/sixers", function(req, res) {
+  app.get("/api/scrape/sixers", function(req, res) {
     // First, we grab the body of the html with axios
     axios.get("https://old.reddit.com/r/sixers/").then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -90,9 +87,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/scrape/flyers", function(req, res) {
+  app.get("/api/scrape/flyers", function(req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://old.reddit.com/r/flyersno/").then(function(response) {
+    axios.get("https://old.reddit.com/r/flyers/").then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
 
@@ -129,7 +126,7 @@ module.exports = function(app) {
   });
 
   // Route for getting all Articles from the db
-  app.get("/articles", function(req, res) {
+  app.get("/api/articles", function(req, res) {
     // Grab every document in the Articles collection
     db.Article.find({})
       .then(function(dbArticle) {
@@ -143,7 +140,7 @@ module.exports = function(app) {
   });
 
   // Route for grabbing a specific Article by id, populate it with it's note
-  app.get("/articles/:id", function(req, res) {
+  app.get("/api/notes/:id", function(req, res) {
     // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
     db.Article.findOne({ _id: req.params.id })
       // ..and populate all of the notes associated with it
@@ -159,7 +156,7 @@ module.exports = function(app) {
   });
 
   // Route for saving/updating an Article's associated Note
-  app.post("/articles/:id", function(req, res) {
+  app.post("/api/notes/:id", function(req, res) {
     // Create a new note and pass the req.body to the entry
     db.Note.create(req.body)
       .then(function(dbNote) {

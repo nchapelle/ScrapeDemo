@@ -1,33 +1,36 @@
 <div id="home">
   <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+    <div id="wrapper">
+      <div class="row"> 
+        <div class="card col" style="width: 18rem;">
+          <img src="https://logo.clearbit.com/philadelphiaeagles.com" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Eagles News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia Eagles</p>
+            <a href="/api/scrape/eagles" class="btn btn-success">NFL News</a>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+        </div>
+        <div class="card col" style="width: 18rem;">
+          <img src="https://www.nba.com/.element/img/1.0/teamsites/logos/teamlogos_80x64/phi.gif" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">76ers News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia 76ers. In Progress.</p>
+            <a href="/api/scrape/sixers" class="btn btn-primary">NBA News</a>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+        </div>
+        <div class="card col" style="width: 18rem;">
+          <img src="https://www-league.nhlstatic.com/nhl.com/builds/site-core/80ac5d837e089a5cc32a2b504958401841debdf9_1575321178/images/logos/team/current/team-4-light.svg" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Flyers News</h5>
+            <p class="card-text">Get the latest news on the Philadelphia Flyers. In Progress.</p>
+            <a href="/api/scrape/flyers" class="btn btn-dark">NHL News</a>
+          </div>
+        </div>
       </div>
+      <div id="articles"></div>
+      <div id="notes"></div>
     </div>
+
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

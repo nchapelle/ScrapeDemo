@@ -1,6 +1,7 @@
 var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var bootbox = require("bootbox");
 
 mongoose.Promise = Promise;
 
